@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class StudentManagementApp {
 
     private static final Scanner scanner = new Scanner(System.in);
-    private static final ArrayList<Student> students = new ArrayList<>();
+    public ArrayList<Student> students = new ArrayList<>();
 
     public static void main(String[] args) {
         StudentManagementApp studentManagementApp= new StudentManagementApp();
@@ -20,16 +20,6 @@ public class StudentManagementApp {
             displayMenu();
             String choice = scanner.nextLine();
 
-
-                if (choice == "1") {
-                    System.out.print("Please select one of the following menu items:\n" +
-                            "(1) Capture a new student.\n" +
-                            "(2) Search for a student.\n" +
-                            "(3) Delete a student.\n" +
-                            "(4) Print student report.\n" +
-                            "(5) Exit Application.\n" +
-                            "Choice: ");
-                }
                 switch (choice) {
                     case "1":
                         captureNewStudent();
@@ -58,6 +48,16 @@ public class StudentManagementApp {
         System.out.println("*******************************");
         System.out.println("Enter (1) to launch menu or any other key to exit");
 
+
+
+
+            System.out.print("Please select one of the following menu items:\n" +
+                    "(1) Capture a new student.\n" +
+                    "(2) Search for a student.\n" +
+                    "(3) Delete a student.\n" +
+                    "(4) Print student report.\n" +
+                    "(5) Exit Application.\n" +
+                    "Choice: ");
 
     }
 
@@ -128,7 +128,7 @@ public class StudentManagementApp {
         }
         return true;
     }
-    private static void deleteStudent() {
+    public void deleteStudent() {
         System.out.println("Enter student ID to delete: ");
         String id = scanner.nextLine();
         for (Student student : students) {
